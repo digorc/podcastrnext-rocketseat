@@ -1,7 +1,6 @@
 // SPA
 // SSR
 // SSG
-import { useContext } from 'react';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +8,7 @@ import { api } from '../services/api';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString';
-import { PlayerContext } from '../contexts/PlayerContext';
+import { usePlayer } from '../contexts/PlayerContext';
 
 import styles from './home.module.scss';
 
@@ -38,7 +37,7 @@ export default function Home({ lastestEpisodes, allEpisodes }: HomeProps) {
 
   // console.log(props.episodes)
 
-  const { playList } = useContext(PlayerContext);
+  const { playList } = usePlayer();
 
   const episodeList = [...lastestEpisodes, ...allEpisodes];
 
