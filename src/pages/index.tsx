@@ -3,6 +3,7 @@
 // SSG
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import Header from 'next/head';
 import Link from 'next/link';
 import { api } from '../services/api';
 import { format, parseISO } from 'date-fns';
@@ -44,6 +45,10 @@ export default function Home({ lastestEpisodes, allEpisodes }: HomeProps) {
   return (
     <>
       <div className={styles.homepage}>
+        <Header>
+          <title>Home | Podcastr</title>
+        </Header>
+
         <section className={styles.lastestEpisodes}>
           <h2>Últimos lançamentos</h2>
 
