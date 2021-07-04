@@ -1,5 +1,3 @@
-parei no minuto 33:23
-
 import { parseISO, format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import Image from 'next/image';
